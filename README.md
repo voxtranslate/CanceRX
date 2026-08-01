@@ -7,7 +7,7 @@ Multi-cancer deep learning classifiers have recently emerged as an alternative t
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/voxtranslate/CanceRX/main/assets/Datasets_links.png" alt="Table 1: Source corpora merged into the CanceRX training set" width="900">
+  <img src="assets/Datasets_links.png" alt="Table 1: Source corpora merged into the CanceRX training set" width="900">
 </p>
 
 <p align="center">
