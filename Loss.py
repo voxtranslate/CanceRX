@@ -1,0 +1,20 @@
+import torch
+import torch.nn as nn
+
+
+# =============================================
+# LOSS FUNCTIONS
+# =============================================
+
+class OmniLoss(nn.Module):
+    """Combines Cross Entropy with Focal modifier for imbalanced datasets."""
+    def __init__(self, alpha=0.25, gamma=2.0):
+        super().__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+        
+    def forward(self, logits, targets):
+        ce_loss = F.cross_entropy(logits, targets, reduction='none')
+        pt = torch.exp(-ce_loss)
+        focal_loss = self.alpha * (1 - pt) ** self.gamma * ce_loss
+        return focal_loss.mean()
